@@ -1,6 +1,7 @@
 /* Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma */
 
+// chiediamo una parola all'utente
 const userWord = prompt('dimmi una parola');
 const userWordPolindrome = isPolindromeWord(userWord);
 
@@ -19,19 +20,19 @@ if(userWordPolindrome === true) {
 
 function isPolindromeWord(word) {
     let polindromeWord = false;
+    let reverseWord = '';
 
     // scorro la parola al contrario
     for(let i = word.length - 1; i >= 0; i--) {
 
         // stampo la parola al contrario, lettera per lettera
-        let reverseWord = word[i]; 
-
-        // SE la parola al contrario è === alla parola data dall'utente, è vero
-        if (word === reverseWord) {
-            polindromeWord = true;
-        }
-        
+        reverseWord += word[i]; 
     }
 
+    // SE la parola al contrario è === alla parola data dall'utente, è vero
+    if (word === reverseWord) {
+        polindromeWord = true;
+    }
+        
     return polindromeWord;
 }
